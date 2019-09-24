@@ -1,2 +1,2 @@
-# my-webpack-react-typescript-template
-A starter template for a React/Typescript/Webpack based project.
+# my-react-starter-template
+A starter template for a Webpack, React, Typescript, ES2015+  based project.
