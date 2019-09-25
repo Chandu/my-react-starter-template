@@ -32,6 +32,10 @@ class Without {
   }
 }
 
+const esLintOptions = {
+  fix: true
+};
+
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
 
@@ -56,13 +60,23 @@ module.exports = {
         use: [
           {
             loader: 'awesome-typescript-loader'
+          },
+          {
+            loader: 'eslint-loader',
+            options: esLintOptions
           }
         ]
       },
       {
         test: /\.js(x?)$/,
-        loaders: ['babel'],
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: [
+          'babel-loader',
+          {
+            loader: 'eslint-loader',
+            options: esLintOptions
+          }
+        ]
       },
       {
         test: /\.(sa|sc|c)ss$/,
